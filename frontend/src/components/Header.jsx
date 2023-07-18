@@ -32,10 +32,10 @@ const Header = () => {
     <header>
       <Navbar bg='primary' variant='dark' expand='lg' collapseOnSelect>
         <Container>
-          <LinkContainer to='/'>
+          <LinkContainer to='/' className='brandName'>
             <Navbar.Brand>
               {/* <h4 style={{width:'40%', height:'2%', marginBottom:'0px'}}>BOOKISH<span style={{fontSize:'25px', color:'Yellow'}}>Bazaar</span></h4> */}
-              <img src={logo} alt='BookishBazaar' style={{width:'40%', height:'2%'}}/>
+              <img src={logo} alt='BookishBazaar' style={{width:'90%', height:'2%'}}/>
             </Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
