@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom';
 import { useLogoutMutation } from '../slices/usersApiSlice';
 import { logout } from '../slices/authSlice';
 import SearchBox from './SearchBox';
-// import bookish from '../assets/Bookish.png';
 import logo from '../assets/logo.png';
 
 const Header = () => {
@@ -34,7 +33,6 @@ const Header = () => {
         <Container>
           <LinkContainer to='/' className='brandName'>
             <Navbar.Brand>
-              {/* <h4 style={{width:'40%', height:'2%', marginBottom:'0px'}}>BOOKISH<span style={{fontSize:'25px', color:'Yellow'}}>Bazaar</span></h4> */}
               <img src={logo} alt='BookishBazaar' style={{width:'90%', height:'2%'}}/>
             </Navbar.Brand>
           </LinkContainer>

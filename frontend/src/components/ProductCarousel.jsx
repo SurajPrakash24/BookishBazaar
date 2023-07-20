@@ -1,34 +1,40 @@
-import { Link } from 'react-router-dom';
 import { Carousel, Image } from 'react-bootstrap';
-import Message from './Message';
-import { useGetTopProductsQuery } from '../slices/productsApiSlice';
+import carousel1 from '../assets/carousel1.png';
+import carousel2 from '../assets/carousel2.png';
+import carousel3 from '../assets/carousel3.png';
+
+const carouselData = [
+  {
+    id: 1,
+    image: carousel1,
+  },
+  {
+    id: 2,
+    image: carousel2,
+  },
+  {
+    id: 3,
+    image: carousel3,
+  },
+];
 
 const ProductCarousel = () => {
-  const { data: products, isLoading, error } = useGetTopProductsQuery();
-
-  return isLoading ? null : error ? (
-    <Message variant='danger'>{error?.data?.message || error.error}</Message>
-  ) : (
+  return (
     <Carousel pause='hover' className='bg-primary mb-4'>
-      {products.map((product) => (
-        <Carousel.Item key={product._id}>
-          <Link to={`/product/${product._id}`}>
-            <Image 
-            style={{
-              resizeMode: 'cover',
-              height: '10%',
-              width: '35%'
-            }}
-            className='carouselImg'
-            src={product.image} 
-            alt={product.name} 
-            fluid/>
-            <Carousel.Caption className='carousel-caption'>
-              <h4 className='text-white text-right'>
-                {product.name} ₹{product.price}
-              </h4>
-            </Carousel.Caption>
-          </Link>
+      {carouselData.map((carouselItem) => (
+        <Carousel.Item key={carouselItem.id}>
+          <a href="#latestprod">
+            <Image
+              style={{
+                resizeMode: 'cover',
+                height: '10%',
+              }}
+              className='carouselImg'
+              src={carouselItem.image}
+              alt={`Product ${carouselItem.id}`}
+              fluid
+            />
+          </a>
         </Carousel.Item>
       ))}
     </Carousel>
